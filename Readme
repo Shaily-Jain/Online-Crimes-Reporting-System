@@ -1,0 +1,52 @@
+DB = http://localhost/phpmyadmin/index.php?route=/sql&pos=0&db=crime_portal&table=user
+project = http://localhost/Crime-Reporting-System%20/home.php
+youtube = https://www.youtube.com/watch?v=4n-zPntpHdc
+localhost = localhost:3307
+sql_query($con, querystatement);
+
+Project details:
+A cyber crime reporting system is a web-based application that allows users to report cyber crimes such as hacking, phishing, identity theft,
+ cyber bullying, and others. The system helps users to report cyber crimes to law enforcement agencies and provides them with a platform to 
+ track the progress of their complaints.
+
+Project woring
+1. In incharge login, police officer login into his account, all complaint of a login incharge location has been shown.
+   the role of the crime incharge would be to oversee the daily operations of the cyber crime investigation unit. The crime incharge would be
+   responsible for managing a team of investigators and ensuring that all reports of cyber crimes are properly investigated and resolved.
+
+   official login -> incharge login -> view complaint -> all complaint of incharge location has shown -> insert complaint id -> all details   of that id has shown.
+   police officer menu -> add or delete police officer/ see all police assigned for that location,
+
+2. In head login, head can check all the complaint details and updates using id. the role of the crime head would be 
+   to oversee the process of reporting and investigating cyber crimes. The crime head would be responsible for managing 
+   a team of investigators and ensuring that all reports of cyber crimes are properly investigated and resolved
+
+   official login -> head login -> insert complaint id -> all details of that id has shown
+
+4. In complaint database, police status update automatically after closing the case. 
+
+
+used for print data inside body -
+
+1. <?php echo "$location"; ?><br/>
+2.    <?php echo "$location"; ?><br/>
+    <?php 
+    $result = mysqli_query($conn, "SELECT p_name FROM police WHERE location='$location'");
+    while($row = mysqli_fetch_assoc($result)) {
+        echo $row['p_name'];
+    }
+    ?>
+
+3. Add validation for id and password -
+
+    // Validate the email address
+    if (!filter_var($sta1, FILTER_VALIDATE_EMAIL)) {
+        echo "Invalid email address";
+        exit;
+    }
+
+    // Validate the password
+    if (strlen($sta2) < 8) {
+        echo "Password must be at least 8 characters long";
+        exit;
+    }
